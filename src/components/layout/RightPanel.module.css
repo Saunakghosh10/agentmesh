@@ -1,0 +1,152 @@
+.panel {
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.icon { font-size: 16px; }
+
+.liveBadge {
+  margin-left: auto;
+  font-size: 9px;
+  background: rgba(0, 255, 136, 0.15);
+  color: var(--accent);
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.graphPanel {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.graphViz {
+  position: relative;
+  height: 120px;
+}
+
+.graphViz svg {
+  width: 100%;
+  height: 100%;
+}
+
+.metricsList {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.metricCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.metricLabel {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.metricValue {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.metricBar {
+  margin-top: 8px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.metricBarFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logPanel {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  flex: 1;
+  overflow-y: auto;
+  min-height: 100px;
+}
+
+.logEntry {
+  font-size: 10px;
+  font-family: 'Space Mono', monospace;
+  color: var(--muted);
+  padding: 3px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.logTime { color: var(--accent3); margin-right: 6px; }
+.ok { color: var(--accent); }
+.err { color: var(--danger); }
+.warn { color: var(--accent4); }
+
+.verdictSection {
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(247, 201, 72, 0.08), rgba(247, 201, 72, 0.02));
+  flex-shrink: 0;
+  border-top: 1px solid var(--border);
+}
+
+.verdictCard {
+  border: 1px solid rgba(247, 201, 72, 0.3);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.verdictTitle {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--accent4);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.verdictText {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+}

@@ -1,0 +1,50 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 320px 1fr 320px;
+  flex: 1;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.feedWrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 10000;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent3));
+  width: 100%;
+  animation: progressAnim 2s infinite ease-in-out;
+}
+
+@keyframes progressAnim {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: 280px 1fr;
+  }
+}
